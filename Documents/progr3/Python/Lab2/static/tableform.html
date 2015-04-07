@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <script src="static/table.js"> </script>
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <td>Count</td>
+        <td>Weight</td>
+    </tr>
+    %for i in range(len(weight)):
+        %id1 = weight[i]
+        %id2 = count[i]
+        <tr>
+            <td> {{id2}} </td>
+            <td> {{id1}} </td>
+        </tr>
+    %end
+    </table>
+
+    <form action="/table" method="post">
+        <input name="truck" type="text" value="5"/>
+        <input type="submit"/>
+        <input name="start" value="Start" type="button" onclick="location.href='/calculations'"/>
+    </form>
+
+    <script>
+        var xmlhttp;
+        var ret = document.getElementById("truck").value;
+
+        if (window.XMLHttpRequest)
+        { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        { // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.open("POST", "http://localhost:8080/table", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("truck=" + ret);
+    </script>
+</body>
+</html>
