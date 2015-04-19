@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="static/propagate.js"> </script>
+    <script>
+        function renew() {
+                    var xmlhttp = make_request();
+                    xmlhttp.onreadystatechange=function()
+                    {
+                        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                        {
+                            console.log("TRYING");
+                            //document.innerHTML = xmlhttp.responseText;
+                            document.getElementById("prep").innerHTML = xmlhttp.responseText;
+                        }
+                    }
+
+                    xmlhttp.open("GET", "http://localhost:8080/calculations", true);
+                    xmlhttp.send();
+        }
+    </script>
+    <title></title>
+</head>
+<body>
+    <div id="prep">
+        Clients: <input name="clients" type="text" id="clients" value="{{clients}}" />
+        Start calculation: <input name="ajax" type="button" id="butt" value="Start" onclick="propagate({{weight}}, {{length}}, {{truck}}, {{clients}})"/>
+        <input name="refresh" type="button" id="refresh" value="Refresh" onclick="renew()" />
+        <input name="disconnect" type="button" id="disconnect" value="Disconnect" onclick="location.href='/disconnect'" />
+    </div>
+</body>
+</html>

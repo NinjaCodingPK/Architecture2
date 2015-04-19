@@ -1,0 +1,96 @@
+Help on module main:
+
+NAME
+    main
+
+FILE
+    /home/wookie/Documents/progr3/Python/Lab2/main.py
+
+CLASSES
+    addform
+    calculations
+    makedata
+    tableform
+    
+    class addform
+     |  Methods defined here:
+     |  
+     |  GetCount(self)
+     |      :return: count array
+     |  
+     |  GetWeight(self)
+     |      :return: weight array
+     |  
+     |  __init__(self, app)
+     |      :param app: bottle application
+     |      :return: nothing
+     |  
+     |  addfile(self)
+     |  
+     |  get_elem(self)
+     |      Do receive data from html form
+     |      :return: html page main.html
+     |  
+     |  showform(self)
+     |      :return: html page main.html
+    
+    class calculations
+     |  Methods defined here:
+     |  
+     |  __init__(self, app, weight, count, truck)
+     |      :param app: bottle application
+     |      :param weight: weight array
+     |      :param count: count array
+     |      :param truck: truck data
+     |      :return: nothing
+     |  
+     |  connect(self)
+     |      :return: html page calculations.html
+     |  
+     |  data_remake(self, weight, count)
+     |      :param weight: weight array
+     |      :param count: count array
+     |      :return: combine array of weight and count arrays
+     |  
+     |  test_data(self)
+    
+    class makedata
+     |  Class for working with data array
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self)
+     |  
+     |  addelem(self, elem)
+     |      :param elem: new element of array
+     |      :return: nothing
+     |  
+     |  retdata(self)
+     |      :return: the whole array
+    
+    class tableform
+     |  Methods defined here:
+     |  
+     |  __init__(self, app, weight, count)
+     |      :param app: bottle application
+     |      :param weight:  weight array
+     |      :param count:  count array
+     |      :return: nothing
+     |  
+     |  addfile(self)
+     |  
+     |  get_truck(self)
+     |      Do receive truck data from html form
+     |      :return: html page tableform.html
+     |  
+     |  ret_truck(self)
+     |      :return: truck data
+     |  
+     |  showform(self)
+     |      :return: html page tableform.html
+
+DATA
+    request = <LocalRequest: GET http://127.0.0.1/>
+    response = Content-Type: text/html; charset=UTF-8
+
+
